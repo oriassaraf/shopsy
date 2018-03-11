@@ -37,7 +37,7 @@ async function getAll() {
   return models.Order.findAll({ where: {}, include: [models.OrderItem] });
 }
 
-async function setStatus (orderId, status) {
+async function setStatus(orderId, status) {
   return models.Order.update({ status }, { where: { id: orderId } });
 }
 

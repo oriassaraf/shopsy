@@ -6,7 +6,7 @@ module.exports = (config) => {
   const log = config.logger;
   const order = orderService(config.mysql.client);
 
-  router.get('/', async (req, res) => {
+  router.get('/', async (req, res, next) => {
     try {
       // Get all orders
       const orderResult = await order.getAll();
